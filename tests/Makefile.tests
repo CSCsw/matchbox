@@ -1,0 +1,38 @@
+TESTS = \
+        testBptGraph\
+        testGraph\
+        testConvertEngine\
+        testBptMatchingEngine\
+        testMatchingEngine
+
+all: $(TESTS)
+
+testBptGraph: testBptGraph.o $(MATCHBOX_LIBRARY)
+	$(LINK) $(LFLAGS) testBptGraph.o $(MATCHBOX_LIBRARY) 
+
+testGraph: testGraph.o $(MATCHBOX_LIBRARY)
+	$(LINK) $(LFLAGS) testGraph.o $(MATCHBOX_LIBRARY) 
+
+testConvertEngine: testConvertEngine.o $(MATCHBOX_LIBRARY)
+	$(LINK) $(LFLAGS) testConvertEngine.o $(MATCHBOX_LIBRARY) 
+
+testBptMatchingEngine: testBptMatchingEngine.o $(MATCHBOX_LIBRARY)
+	$(LINK) $(LFLAGS) testBptMatchingEngine.o $(MATCHBOX_LIBRARY) 
+
+testMatchingEngine: testMatchingEngine.o $(MATCHBOX_LIBRARY)
+	$(LINK) $(LFLAGS) testMatchingEngine.o $(MATCHBOX_LIBRARY) 
+
+testBptGraph.o: $(MATCHBOX_TESTS)/testBptGraph.cc
+	$(COMPILE) $(CFLAGS) $(MATCHBOX_TESTS)/testBptGraph.cc
+
+testGraph.o: $(MATCHBOX_TESTS)/testGraph.cc
+	$(COMPILE) $(CFLAGS) $(MATCHBOX_TESTS)/testGraph.cc
+
+testConvertEngine.o: $(MATCHBOX_TESTS)/testConvertEngine.cc
+	$(COMPILE) $(CFLAGS) $(MATCHBOX_TESTS)/testConvertEngine.cc
+
+testBptMatchingEngine.o: $(MATCHBOX_TESTS)/testBptMatchingEngine.cc
+	$(COMPILE) $(CFLAGS) $(MATCHBOX_TESTS)/testBptMatchingEngine.cc
+
+testMatchingEngine.o: $(MATCHBOX_TESTS)/testMatchingEngine.cc
+	$(COMPILE) $(CFLAGS) $(MATCHBOX_TESTS)/testMatchingEngine.cc

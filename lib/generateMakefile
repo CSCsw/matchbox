@@ -1,0 +1,35 @@
+#!/usr/bin/perl -w
+
+open(INPUT, "input");
+open(OUTPUT, ">Makefile.lib");
+
+@line = <INPUT>;
+
+print OUTPUT "OBJS = ";
+
+foreach $line (@line)
+{
+  print OUTPUT "\\\n";
+  chomp(@line);
+  print OUTPUT "       ".$line.".o";
+}
+
+print OUTPUT "\n";
+
+foreach $line (@line)
+{
+  chomp(@line);
+  print OUTPUT "\n";
+  print OUTPUT $line.".o: ";
+  print OUTPUT "\$(MATCHBOX_SRC)/";
+  print OUTPUT $line.".cc";
+  print OUTPUT "\n";
+  print OUTPUT "\t";
+  print OUTPUT "\$(COMPILE) \$(CFLAGS) ";
+  print OUTPUT "\$(MATCHBOX_SRC)/";
+  print OUTPUT $line.".cc";
+  print OUTPUT "\n";
+}
+
+close(INPUT);
+close(OUTPUT);

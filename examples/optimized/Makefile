@@ -1,0 +1,14 @@
+include ../../Makefile.gnu_32
+
+COMPILE = $(COMPILE_OPTIMIZED)
+CFLAGS = $(CFLAGS_OPTIMIZED)
+
+LINK = $(LINK_OPTIMIZED)
+LFLAGS = $(LFLAGS_OPTIMIZED)
+
+MATCHBOX_LIBRARY = $(MATCHBOX_LIB_OPTIMIZED_DIR)/$(MATCHBOX_LIB_FILES)
+
+include ../Makefile.examples
+
+clean:
+	rm -f $(EXAMPLES) *.o *~

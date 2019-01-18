@@ -1,0 +1,52 @@
+#!/usr/bin/perl -w
+
+open(INPUT, "input");
+open(OUTPUT, ">Makefile.examples");
+
+@line = <INPUT>;
+
+print OUTPUT "EXAMPLES = ";
+
+foreach $line (@line)
+{
+  print OUTPUT "\\\n";
+  chomp(@line);
+  print OUTPUT "           ".$line;
+}
+
+print OUTPUT "\n\n";
+print OUTPUT "all: \$(EXAMPLES)";
+print OUTPUT "\n";
+
+foreach $line (@line)
+{
+  chomp(@line);
+  print OUTPUT "\n";
+  print OUTPUT $line.": ";
+  print OUTPUT $line.".o ";
+  print OUTPUT "\$(MATCHBOX_LIBRARY)";
+  print OUTPUT "\n";
+  print OUTPUT "\t";
+  print OUTPUT "\$(LINK) \$(LFLAGS) ";
+  print OUTPUT $line.".o ";
+  print OUTPUT "\$(MATCHBOX_LIBRARY) ";
+  print OUTPUT "\n";
+}
+
+foreach $line (@line)
+{
+  chomp(@line);
+  print OUTPUT "\n";
+  print OUTPUT $line.".o: ";
+  print OUTPUT "\$(MATCHBOX_EXAMPLES)/";
+  print OUTPUT $line.".cc";
+  print OUTPUT "\n";
+  print OUTPUT "\t";
+  print OUTPUT "\$(COMPILE) \$(CFLAGS) ";
+  print OUTPUT "\$(MATCHBOX_EXAMPLES)/";
+  print OUTPUT $line.".cc";
+  print OUTPUT "\n";
+}
+
+close(INPUT);
+close(OUTPUT);

@@ -1,0 +1,49 @@
+OBJS = \
+       BptGraph.o\
+       Graph.o\
+       Stats.o\
+       ConvertEngine.o\
+       AdjGraphEngine.o\
+       BptMatchingEngine.o\
+       BptCanonicalEngine.o\
+       BptEdgCovEngine.o\
+       BptIndSetEngine.o\
+       BptVtxCovEngine.o\
+       MatchingEngine.o\
+       Timer.o
+
+BptGraph.o: $(MATCHBOX_SRC)/BptGraph.cc
+	$(COMPILE) $(CFLAGS) $(MATCHBOX_SRC)/BptGraph.cc
+
+Graph.o: $(MATCHBOX_SRC)/Graph.cc
+	$(COMPILE) $(CFLAGS) $(MATCHBOX_SRC)/Graph.cc
+
+Stats.o: $(MATCHBOX_SRC)/Stats.cc
+	$(COMPILE) $(CFLAGS) $(MATCHBOX_SRC)/Stats.cc
+
+ConvertEngine.o: $(MATCHBOX_SRC)/ConvertEngine.cc
+	$(COMPILE) $(CFLAGS) $(MATCHBOX_SRC)/ConvertEngine.cc
+
+AdjGraphEngine.o: $(MATCHBOX_SRC)/AdjGraphEngine.cc
+	$(COMPILE) $(CFLAGS) $(MATCHBOX_SRC)/AdjGraphEngine.cc
+
+BptMatchingEngine.o: $(MATCHBOX_SRC)/BptMatchingEngine.cc
+	$(COMPILE) $(CFLAGS) $(MATCHBOX_SRC)/BptMatchingEngine.cc
+
+BptCanonicalEngine.o: $(MATCHBOX_SRC)/BptCanonicalEngine.cc
+	$(COMPILE) $(CFLAGS) $(MATCHBOX_SRC)/BptCanonicalEngine.cc
+
+BptEdgCovEngine.o: $(MATCHBOX_SRC)/BptEdgCovEngine.cc
+	$(COMPILE) $(CFLAGS) $(MATCHBOX_SRC)/BptEdgCovEngine.cc
+
+BptIndSetEngine.o: $(MATCHBOX_SRC)/BptIndSetEngine.cc
+	$(COMPILE) $(CFLAGS) $(MATCHBOX_SRC)/BptIndSetEngine.cc
+
+BptVtxCovEngine.o: $(MATCHBOX_SRC)/BptVtxCovEngine.cc
+	$(COMPILE) $(CFLAGS) $(MATCHBOX_SRC)/BptVtxCovEngine.cc
+
+MatchingEngine.o: $(MATCHBOX_SRC)/MatchingEngine.cc
+	$(COMPILE) $(CFLAGS) $(MATCHBOX_SRC)/MatchingEngine.cc
+
+Timer.o: $(MATCHBOX_SRC)/Timer.cc
+	$(COMPILE) $(CFLAGS) $(MATCHBOX_SRC)/Timer.cc

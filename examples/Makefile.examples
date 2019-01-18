@@ -1,0 +1,173 @@
+EXAMPLES = \
+		   BptMaxVtxWght\
+			BptHalfVtxWght\
+		   BptTwoThirdVtxWght\
+		   BptMaxEdgWght\
+           VWM\
+		   HalfVtxWght\
+		   TwoThirdVtxWght\
+           SuitorVtxWght\
+		   ScaleApproxVtxWght\
+		   ParSuitorVtxWght\
+		   MaxCard\
+		   BptPrfMaxEdgWght\
+		   BptSemiPrfMaxEdgWght\
+		   BptHalfEdgWght\
+		   HalfEdgWght\
+		   AprxMaxEdgWght\
+		   BptAprxMaxCard\
+		   BptCanonical\
+		   BptLocalVtxWght\
+           BptMaxCard\
+           BptSuitorVtxWght\
+           LocalVtxWght\
+           PGDPVtxWght\
+           PGVtxWght
+
+all: $(EXAMPLES)
+
+BptMaxVtxWght: BptMaxVtxWght.o $(MATCHBOX_LIBRARY)
+	$(LINK) $(LFLAGS) BptMaxVtxWght.o $(MATCHBOX_LIBRARY) 
+
+BptHalfVtxWght: BptHalfVtxWght.o $(MATCHBOX_LIBRARY)
+	$(LINK) $(LFLAGS) BptHalfVtxWght.o $(MATCHBOX_LIBRARY)
+
+BptTwoThirdVtxWght: BptTwoThirdVtxWght.o $(MATCHBOX_LIBRARY)
+	$(LINK) $(LFLAGS) BptTwoThirdVtxWght.o $(MATCHBOX_LIBRARY)
+
+BptMaxEdgWght: BptMaxEdgWght.o $(MATCHBOX_LIBRARY)
+	$(LINK) $(LFLAGS) BptMaxEdgWght.o $(MATCHBOX_LIBRARY)
+
+VWM: VWM.o $(MATCHBOX_LIBRARY)
+	$(LINK) $(LFLAGS) VWM.o $(MATCHBOX_LIBRARY)
+
+HalfVtxWght: HalfVtxWght.o $(MATCHBOX_LIBRARY)
+	$(LINK) $(LFLAGS) HalfVtxWght.o $(MATCHBOX_LIBRARY)
+
+TwoThirdVtxWght: TwoThirdVtxWght.o $(MATCHBOX_LIBRARY)
+	$(LINK) $(LFLAGS) TwoThirdVtxWght.o $(MATCHBOX_LIBRARY)
+
+SuitorVtxWght: SuitorVtxWght.o $(MATCHBOX_LIBRARY)
+	$(LINK) $(LFLAGS) SuitorVtxWght.o $(MATCHBOX_LIBRARY)
+	
+
+ScaleApproxVtxWght: ScaleApproxVtxWght.o $(MATCHBOX_LIBRARY)
+	$(LINK) $(LFLAGS) ScaleApproxVtxWght.o $(MATCHBOX_LIBRARY)
+
+ParSuitorVtxWght: ParSuitorVtxWght.o $(MATCHBOX_LIBRARY)
+	$(LINK) $(LFLAGS) ParSuitorVtxWght.o $(MATCHBOX_LIBRARY)
+	
+MaxCard: MaxCard.o $(MATCHBOX_LIBRARY)
+	$(LINK) $(LFLAGS) MaxCard.o $(MATCHBOX_LIBRARY)
+
+BptPrfMaxEdgWght: BptPrfMaxEdgWght.o $(MATCHBOX_LIBRARY)
+	$(LINK) $(LFLAGS) BptPrfMaxEdgWght.o $(MATCHBOX_LIBRARY)
+	
+BptSemiPrfMaxEdgWght: BptSemiPrfMaxEdgWght.o $(MATCHBOX_LIBRARY)
+	$(LINK) $(LFLAGS) BptSemiPrfMaxEdgWght.o $(MATCHBOX_LIBRARY)
+
+BptHalfEdgWght: BptHalfEdgWght.o $(MATCHBOX_LIBRARY)
+	$(LINK) $(LFLAGS) BptHalfEdgWght.o $(MATCHBOX_LIBRARY)
+	
+HalfEdgWght: HalfEdgWght.o $(MATCHBOX_LIBRARY)
+	$(LINK) $(LFLAGS) HalfEdgWght.o $(MATCHBOX_LIBRARY)
+
+AprxMaxEdgWght: AprxMaxEdgWght.o $(MATCHBOX_LIBRARY)
+	$(LINK) $(LFLAGS) AprxMaxEdgWght.o $(MATCHBOX_LIBRARY)
+
+BptAprxMaxCard: BptAprxMaxCard.o $(MATCHBOX_LIBRARY)
+	$(LINK) $(LFLAGS) BptAprxMaxCard.o $(MATCHBOX_LIBRARY)
+	
+BptCanonical: BptCanonical.o $(MATCHBOX_LIBRARY)
+	$(LINK) $(LFLAGS) BptCanonical.o $(MATCHBOX_LIBRARY)
+	
+BptLocalVtxWght: BptLocalVtxWght.o $(MATCHBOX_LIBRARY)
+	$(LINK) $(LFLAGS) BptLocalVtxWght.o $(MATCHBOX_LIBRARY)
+	
+BptMaxCard: BptMaxCard.o $(MATCHBOX_LIBRARY)
+	$(LINK) $(LFLAGS) BptMaxCard.o $(MATCHBOX_LIBRARY)
+	
+BptSuitorVtxWght: BptSuitorVtxWght.o $(MATCHBOX_LIBRARY)
+	$(LINK) $(LFLAGS) BptSuitorVtxWght.o $(MATCHBOX_LIBRARY)
+	
+LocalVtxWght: LocalVtxWght.o $(MATCHBOX_LIBRARY)
+	$(LINK) $(LFLAGS) LocalVtxWght.o $(MATCHBOX_LIBRARY)
+	
+PGDPVtxWght: PGDPVtxWght.o $(MATCHBOX_LIBRARY)
+	$(LINK) $(LFLAGS) PGDPVtxWght.o $(MATCHBOX_LIBRARY)
+	
+PGVtxWght: PGVtxWght.o $(MATCHBOX_LIBRARY)
+	$(LINK) $(LFLAGS) PGVtxWght.o $(MATCHBOX_LIBRARY)
+
+BptMaxVtxWght.o: $(MATCHBOX_EXAMPLES)/BptMaxVtxWght.cc
+	$(COMPILE) $(CFLAGS) $(MATCHBOX_EXAMPLES)/BptMaxVtxWght.cc
+
+BptHalfVtxWght.o: $(MATCHBOX_EXAMPLES)/BptHalfVtxWght.cc
+	$(COMPILE) $(CFLAGS) $(MATCHBOX_EXAMPLES)/BptHalfVtxWght.cc 
+	
+BptTwoThirdVtxWght.o: $(MATCHBOX_EXAMPLES)/BptTwoThirdVtxWght.cc
+	$(COMPILE) $(CFLAGS) $(MATCHBOX_EXAMPLES)/BptTwoThirdVtxWght.cc 
+	
+BptMaxEdgWght.o: $(MATCHBOX_EXAMPLES)/BptMaxEdgWght.cc
+	$(COMPILE) $(CFLAGS) $(MATCHBOX_EXAMPLES)/BptMaxEdgWght.cc 
+	
+VWM.o: $(MATCHBOX_EXAMPLES)/VWM.cc
+	$(COMPILE) $(CFLAGS) $(MATCHBOX_EXAMPLES)/VWM.cc 
+
+HalfVtxWght.o: $(MATCHBOX_EXAMPLES)/HalfVtxWght.cc
+	$(COMPILE) $(CFLAGS) $(MATCHBOX_EXAMPLES)/HalfVtxWght.cc 
+	
+TwoThirdVtxWght.o: $(MATCHBOX_EXAMPLES)/TwoThirdVtxWght.cc
+	$(COMPILE) $(CFLAGS) $(MATCHBOX_EXAMPLES)/TwoThirdVtxWght.cc 
+
+SuitorVtxWght.o: $(MATCHBOX_EXAMPLES)/SuitorVtxWght.cc
+	$(COMPILE) $(CFLAGS) $(MATCHBOX_EXAMPLES)/SuitorVtxWght.cc 
+
+ScaleApproxVtxWght.o: $(MATCHBOX_EXAMPLES)/ScaleApproxVtxWght.cc
+	$(COMPILE) $(CFLAGS) $(MATCHBOX_EXAMPLES)/ScaleApproxVtxWght.cc
+	
+
+ParSuitorVtxWght.o: $(MATCHBOX_EXAMPLES)/ParSuitorVtxWght.cc
+	$(COMPILE) $(CFLAGS) $(MATCHBOX_EXAMPLES)/ParSuitorVtxWght.cc
+	
+MaxCard.o: $(MATCHBOX_EXAMPLES)/MaxCard.cc
+	$(COMPILE) $(CFLAGS) $(MATCHBOX_EXAMPLES)/MaxCard.cc
+	
+BptPrfMaxEdgWght.o: $(MATCHBOX_EXAMPLES)/BptPrfMaxEdgWght.cc
+	$(COMPILE) $(CFLAGS) $(MATCHBOX_EXAMPLES)/BptPrfMaxEdgWght.cc
+	
+BptSemiPrfMaxEdgWght.o: $(MATCHBOX_EXAMPLES)/BptSemiPrfMaxEdgWght.cc
+	$(COMPILE) $(CFLAGS) $(MATCHBOX_EXAMPLES)/BptSemiPrfMaxEdgWght.cc
+
+BptHalfEdgWght.o: $(MATCHBOX_EXAMPLES)/BptHalfEdgWght.cc
+	$(COMPILE) $(CFLAGS) $(MATCHBOX_EXAMPLES)/BptHalfEdgWght.cc
+
+HalfEdgWght.o: $(MATCHBOX_EXAMPLES)/HalfEdgWght.cc
+	$(COMPILE) $(CFLAGS) $(MATCHBOX_EXAMPLES)/HalfEdgWght.cc
+
+AprxMaxEdgWght.o: $(MATCHBOX_EXAMPLES)/AprxMaxEdgWght.cc
+	$(COMPILE) $(CFLAGS) $(MATCHBOX_EXAMPLES)/AprxMaxEdgWght.cc
+		
+BptAprxMaxCard.o: $(MATCHBOX_EXAMPLES)/BptAprxMaxCard.cc
+	$(COMPILE) $(CFLAGS) $(MATCHBOX_EXAMPLES)/BptAprxMaxCard.cc
+	
+BptCanonical.o: $(MATCHBOX_EXAMPLES)/BptCanonical.cc
+	$(COMPILE) $(CFLAGS) $(MATCHBOX_EXAMPLES)/BptCanonical.cc
+	
+BptLocalVtxWght.o: $(MATCHBOX_EXAMPLES)/BptLocalVtxWght.cc
+	$(COMPILE) $(CFLAGS) $(MATCHBOX_EXAMPLES)/BptLocalVtxWght.cc
+	
+BptMaxCard.o: $(MATCHBOX_EXAMPLES)/BptMaxCard.cc
+	$(COMPILE) $(CFLAGS) $(MATCHBOX_EXAMPLES)/BptMaxCard.cc
+	
+BptSuitorVtxWght.o: $(MATCHBOX_EXAMPLES)/BptSuitorVtxWght.cc
+	$(COMPILE) $(CFLAGS) $(MATCHBOX_EXAMPLES)/BptSuitorVtxWght.cc
+	
+LocalVtxWght.o: $(MATCHBOX_EXAMPLES)/LocalVtxWght.cc
+	$(COMPILE) $(CFLAGS) $(MATCHBOX_EXAMPLES)/LocalVtxWght.cc
+	
+PGDPVtxWght.o: $(MATCHBOX_EXAMPLES)/PGDPVtxWght.cc
+	$(COMPILE) $(CFLAGS) $(MATCHBOX_EXAMPLES)/PGDPVtxWght.cc
+	
+PGVtxWght.o: $(MATCHBOX_EXAMPLES)/PGVtxWght.cc
+	$(COMPILE) $(CFLAGS) $(MATCHBOX_EXAMPLES)/PGVtxWght.cc
