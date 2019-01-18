@@ -1,0 +1,21 @@
+CUR_DIR = $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
+include $(CUR_DIR)Makefile.common
+
+COMPILE_OPTIMIZED = g++ 
+CFLAGS_OPTIMIZED = -c -Wall -O3 -ansi -g -DSTATS $(BUILD_FLAGS_32)
+#CFLAGS_OPTIMIZED = -fopenmp -c -Wall -O3 -ansi -g -DSTATS $(BUILD_FLAGS_32)
+
+COMPILE_DEBUG = g++
+#CFLAGS_DEBUG = -fopenmp -c -Wall -Ofast -falign-functions=16 -falign-loops=16 -ansi -g -DSTATS $(BUILD_FLAGS_32)
+CFLAGS_DEBUG = -fopenmp -c -Wall -ansi -g -DSTATS $(BUILD_FLAGS_32)
+
+LINK_OPTIMIZED = g++
+LFLAGS_OPTIMIZED = -o $@
+
+LINK_DEBUG = g++
+LFLAGS_DEBUG = -fopenmp -lrt -o $@ 
+
+ARCHIVE = ar
+AFLAGS = rcv $@
+
+REALTIME = -lrt
